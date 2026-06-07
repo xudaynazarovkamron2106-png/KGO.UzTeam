@@ -11,13 +11,23 @@ st.markdown("""
     .stTabs [data-baseweb="tab"] { color: #8b949e !important; font-size: 16px; }
     .stTabs [aria-selected="true"] { color: #00d2ff !important; font-weight: bold; }
     .kgo-box { background-color: #161b22; padding: 20px; border-radius: 10px; border-left: 5px solid #00d2ff; margin-bottom: 15px; }
-    .kgo-package { background-color: #1f242c; padding: 15px; border-radius: 8px; border-top: 4px solid #ff007f; }
+    .kgo-package { background-color: #1f242c; padding: 15px; border-radius: 8px; border-top: 4px solid #ff007f; margin-bottom: 10px; }
     </style>
-""", unsafe_view_menu=True)
+""", unsafe_allow_html=True)
 
-# --- TEPA QISM (HEADER) ---
-st.title("♾️ KGO Help & UzTeam")
-st.caption("Kelajak texnologiyalari va raqamli gʻoyalar markazi")
+# --- TEPA QISM (HEADER) & HELP TUGMASI ---
+col_title, col_btn = st.columns([4, 1])
+
+with col_title:
+    st.title("♾️ KGO Help & UzTeam")
+    st.caption("Kelajak texnologiyalari va raqamli gʻoyalar markazi")
+
+with col_btn:
+    st.write("")  # Joy tashlash uchun
+    st.write("")
+    # WordPress help saytingga olib o'tuvchi havola (Tugma ko'rinishida)
+    st.link_button("❓ Help (Yordam)", "https://xudaynazarovkamron2106-ivgun.wordpress.com/", type="primary")
+
 st.write("---")
 
 # --- NAVIGATSIYA MENYUSI (TABS) ---
@@ -70,4 +80,4 @@ with tab_aloqa:
             st.success(f"Rahmat {name}! Xabaringiz KGO UzTeam bazasiga qabul qilindi.")
 
 st.write("---")
-st.center = st.write("© 2026 KGO UzTeam | Asoschi: Kamron Xudaynazarov")
+st.write("© 2026 KGO UzTeam | Asoschi: Kamron Xudaynazarov")
